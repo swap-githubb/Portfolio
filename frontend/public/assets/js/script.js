@@ -2,6 +2,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Projects data
     const projects = [
         {
+            title: 'Patient Booking system',
+            description: 'Developed an application where patients as well as doctors can register and login in their respective portals. Doctors can update their city, state and date time slots availability whenever they want. Doctors can see their upcoming appointments. Patients can search for doctors according to city, state, speciality and name, and book any available slot for that doctor. After booking the might also cancel the appointment. Also implemented notification via mail feature on booking as well as cancellation of appointment. Designed interactive UI using React and Node, Express for handling server requests. MongoDB is used for storing data.',
+            tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB'],
+            image: 'assets/images/projects/patient-booking.png',
+            deployed: 'https://patient-booking-system-1.onrender.com/'
+        },
+        {
+            title: 'AI powered clinical support system',
+            description: 'Developed an application where patients (speaking functionality) can do a conversation with AI chatbot behaving as a doctor where they tell about their problems and then it asks follow-up questions and patient needs to answer that. After analyzing all the question and answers using pre-trained models (can use fine tuned models for medical purposes), it will give SOAP notes and Differential diagnosis. The conversation transcript is also provided to the patient (using on-time speech to text conversion). Designed interactive UI using React and FastAPI for handling server requests.',
+            tech: ['React.js', 'FastAPI', 'Python'],
+            image: 'assets/images/projects/ai-powered-clinical-support-system.png',
+            deployed: 'https://fdocpa.onrender.com/'
+        },
+        {
             title: 'Your Cook Application',
             description: 'Developed a personalized recipe recommendation platform that suggests meals based on users dietary preferences, available ingredients, and cuisine type. Implemented user authentication, secure data storage, and dynamic filtering for enhanced user experience. Designed an interactive UI using HTML, JS and CSS, with Node and Express handling server requests. Integrated MongoDB for efficient data storage and retrieval, ensuring scalability.',
             tech: ['Node.js', 'MongoDB', 'Express.js', 'HTML', 'CSS', 'JavaScript'],
@@ -55,6 +69,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="tech-stack">
                     ${project.tech.map(t => `<span>${t}</span>`).join('')}
                 </div>
+                ${
+                    project.deployed
+                        ? `<div class="project-deployed" style="margin-top: 15px;">
+                                <a href="${project.deployed}" 
+                                   target="_blank" 
+                                   rel="noopener noreferrer" 
+                                   style="text-decoration: none; 
+                                          color: #fff; 
+                                          background-color:rgb(128, 182, 218); 
+                                          padding: 4px 6px; 
+                                          border-radius: 4px;
+                                          display: inline-block;">
+                                   View Deployed Application
+                                </a>
+                           </div>`
+                        : ''
+                }
             </div>
         `;
         projectsGrid.appendChild(projectCard);
